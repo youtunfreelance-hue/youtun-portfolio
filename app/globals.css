@@ -13,17 +13,10 @@ body {
   background: #020617 !important;
   font-family: 'Inter', sans-serif !important;
   overflow-x: hidden;
+  cursor: crosshair;
 }
 
-/* 1. Partner Addition: Moving Grid Background */
-.bg-grid {
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(0, 242, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
-  mask-image: radial-gradient(ellipse at center, black, transparent 80%);
-}
-
-/* 2. Side-to-Side Animation for YOUTUN */
+/* 1. Oscillating Title Animation */
 @keyframes sideToSide {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(20px); }
@@ -34,20 +27,27 @@ body {
   animation: sideToSide 6s ease-in-out infinite;
 }
 
-/* 3. Partner Addition: Neon Pulse for Gmail Button */
-@keyframes neonPulse {
-  0%, 100% { box-shadow: 0 0 5px #00f2ff, 0 0 10px #00f2ff; }
-  50% { box-shadow: 0 0 20px #00f2ff, 0 0 40px #00f2ff; }
+/* 2. Directional Movement for Interest */
+.hover-up:hover { transform: translateY(-20px); }
+.hover-down:hover { transform: translateY(20px); }
+.hover-right:hover { transform: translateX(20px); }
+.hover-left:hover { transform: translateX(-20px); }
+
+/* 3. Breathing Neon Pulse */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 242, 255, 0.4); border-color: rgba(0, 242, 255, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(0, 242, 255, 0.7); border-color: #00f2ff; }
 }
-.gmail-pulse {
-  animation: neonPulse 2s infinite;
+.btn-pulse {
+  animation: pulseGlow 2s infinite;
 }
 
 .glass-panel {
   background: rgba(15, 23, 42, 0.6) !important;
-  backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(15px) !important;
   border: 1px solid rgba(255, 255, 255, 0.05) !important;
-  border-radius: 24px !important;
+  border-radius: 32px !important;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .text-luxury {
