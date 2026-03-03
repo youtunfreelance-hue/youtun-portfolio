@@ -6,9 +6,9 @@ export default function Page() {
   const myEmail = "youtun.freelance@gmail.com";
   const [time, setTime] = useState("");
   const [selectedService, setSelectedService] = useState("");
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
-  // Live Node Clock for Karachi Aura
+  // Live Karachi Clock for peak Aura
   useEffect(() => {
     const timer = setInterval(() => {
       setTime(new Date().toLocaleTimeString('en-US', { timeZone: 'Asia/Karachi' }));
@@ -18,109 +18,115 @@ export default function Page() {
 
   const handleDispatch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSuccess(true);
+    setIsSending(true);
     const formData = new FormData(e.currentTarget);
     const business = formData.get("business") as string;
     const vision = formData.get("vision") as string;
     
     setTimeout(() => {
-      window.location.href = `mailto:${myEmail}?subject=Project_REQ: ${business}&body=Selected Service: ${selectedService}%0D%0AVision: ${vision}`;
-      setIsSuccess(false);
-    }, 1000);
+      window.location.href = `mailto:${myEmail}?subject=NODE_INQUIRY: ${business}&body=Protocol: ${selectedService}%0D%0AVision: ${vision}`;
+      setIsSending(false);
+    }, 800);
   };
 
   return (
-    <main className="relative min-h-screen p-6 md:p-20 max-w-[1400px] mx-auto selection:bg-accent/30">
-      
-      {/* HEADER: CLOCK & GMAIL PULSE */}
-      <div className="flex justify-between items-center mb-24 animate-in fade-in slide-in-from-top-4 duration-1000">
-        <div className="flex items-center gap-3">
-          <span className="w-2 h-2 rounded-full bg-accent animate-ping"></span>
-          <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-accent">Node_Live: {time}</p>
+    <main className="relative min-h-screen p-6 md:p-24 max-w-[1500px] mx-auto selection:bg-cyan-500/30">
+      {/* Partner Addition: Scanning HUD Line */}
+      <div className="scan-line"></div>
+
+      {/* TOP HUD: STATUS & CONTACT */}
+      <div className="flex justify-between items-center mb-28">
+        <div className="flex items-center gap-4">
+          <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
+          <p className="text-[10px] font-mono uppercase tracking-[0.5em] text-cyan-400">KARACHI_NODE // {time}</p>
         </div>
-        <a href={`mailto:${myEmail}`} className="btn-pulse bg-accent text-slate-950 px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:scale-110 transition-transform">
-          Direct_Gmail_Contact
+        <a href={`mailto:${myEmail}`} className="glow-breathe bg-cyan-400 text-slate-950 px-10 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:scale-110 transition-transform">
+          Establish_Contact
         </a>
       </div>
       
-      {/* HERO: OSCILLATING TITLE */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-32">
+      {/* HERO SECTION */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-end mb-40">
         <div className="lg:col-span-8">
-          <p className="text-[10px] font-black uppercase tracking-[0.5em] text-slate-500 mb-6">VERIFIED_PORTFOLIO // Karachi_Dev_Node</p>
-          <h1 className="text-8xl md:text-[13rem] font-black leading-none tracking-tighter text-luxury animate-youtun">
+          <p className="text-[10px] font-black uppercase tracking-[0.6em] text-slate-600 mb-6">Verified Digital Architect</p>
+          <h1 className="text-[9rem] md:text-[14rem] font-black leading-[0.8] tracking-tighter text-white animate-youtun">
             YOUTUN
           </h1>
+          <p className="mt-12 text-2xl text-slate-500 max-w-2xl font-medium leading-relaxed">
+            Building <span className="text-white border-b border-cyan-400">high-velocity</span> web systems and digital assets for the 2026 trade landscape.
+          </p>
         </div>
 
-        {/* STATUS: HOVER-DOWN INTEREST */}
-        <div className="lg:col-span-4 glass-panel p-10 hover-down cursor-pointer">
-          <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 text-accent">iPhone 13 Fund Status</p>
-          <h2 className="text-2xl font-bold mb-6 italic text-white tracking-tighter">System Progress</h2>
-          <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden mb-4">
-            <div className="h-full w-[6.7%] bg-accent shadow-[0_0_15px_#00f2ff]"></div>
+        {/* STATUS PANEL: HOVER-DOWN */}
+        <div className="lg:col-span-4 glass-card p-12 hover-down">
+          <p className="text-[10px] font-black uppercase tracking-[0.4em] mb-6 text-cyan-400">Deployment_Fund</p>
+          <h2 className="text-3xl font-bold mb-8 italic text-white tracking-tighter">iPhone 13 Fund</h2>
+          <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden mb-6">
+            <div className="h-full w-[6.7%] bg-cyan-400 shadow-[0_0_20px_#00f2ff]"></div>
           </div>
-          <p className="text-[10px] font-mono text-slate-600">PKR 75,000 // 6.7% STABLE_AND_ACTIVE</p>
+          <div className="flex justify-between font-mono text-[10px] text-slate-500">
+            <span>Goal: PKR 75k</span>
+            <span className="text-cyan-400 font-bold uppercase">6.7% Active</span>
+          </div>
         </div>
       </div>
 
-      {/* SERVICES: DIRECTIONAL GRID */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-40">
+      {/* SERVICES: DIRECTIONAL HUB */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-48">
         {/* SADDAR: HOVER-LEFT */}
-        <div className="glass-panel p-12 hover-left border-l-4 border-accent relative overflow-hidden group">
-          <h3 className="text-4xl font-black italic mb-2">SADDAR_EDGE</h3>
-          <p className="text-[10px] text-accent font-mono mb-8 tracking-widest uppercase">Inventory Protocols</p>
-          <p className="text-slate-400 text-sm mb-12 leading-relaxed max-w-xs">High-velocity synchronization for retail inventory management.</p>
+        <div className="glass-card p-14 hover-left group">
+          <h3 className="text-5xl font-black italic mb-4 group-hover:text-cyan-400 transition-colors">SADDAR_EDGE</h3>
+          <p className="text-[10px] text-cyan-400 font-mono mb-10 tracking-[0.3em] uppercase underline decoration-cyan-400/30">Retail Optimization</p>
+          <p className="text-slate-400 text-sm mb-12 leading-relaxed">Bespoke inventory protocols designed for high-volume Saddar-scale logistics.</p>
           <button 
-            onClick={() => setSelectedService("SADDAR_EDGE_INVENTORY")}
-            className={`w-full py-5 border ${selectedService === "SADDAR_EDGE_INVENTORY" ? "bg-accent text-black" : "border-accent/20 text-accent"} text-[10px] font-black uppercase tracking-widest transition-all mb-8`}
+            onClick={() => setSelectedService("SADDAR_EDGE")}
+            className={`w-full py-5 border ${selectedService === "SADDAR_EDGE" ? "bg-cyan-400 text-black" : "border-white/10 text-white"} text-[10px] font-black uppercase tracking-widest transition-all glow-breathe`}
           >
-            {selectedService === "SADDAR_EDGE_INVENTORY" ? "PROTOCOL_SELECTED" : "INITIALIZE_SERVICE"}
+            {selectedService === "SADDAR_EDGE" ? "PROTOCOL_LOCKED" : "INITIALIZE_PLAN"}
           </button>
-          <span className="text-2xl font-black text-white">PKR 8,000+</span>
         </div>
 
         {/* DHA: HOVER-RIGHT */}
-        <div className="glass-panel p-12 hover-right border-r-4 border-white/5 relative group">
-          <h3 className="text-4xl font-black italic mb-2">DHA_ELITE</h3>
-          <p className="text-[10px] text-accent font-mono mb-8 tracking-widest uppercase">Corp Infrastructure</p>
-          <p className="text-slate-400 text-sm mb-12 leading-relaxed max-w-xs">Ultra-premium identity and web infrastructure for corporate scaling.</p>
+        <div className="glass-card p-14 hover-right group">
+          <h3 className="text-5xl font-black italic mb-4 group-hover:text-cyan-400 transition-colors">DHA_ELITE</h3>
+          <p className="text-[10px] text-cyan-400 font-mono mb-10 tracking-[0.3em] uppercase underline decoration-cyan-400/30">Corp Deployment</p>
+          <p className="text-slate-400 text-sm mb-12 leading-relaxed">Ultra-high-end corporate infrastructure for elite identity establishment.</p>
           <button 
-            onClick={() => setSelectedService("DHA_ELITE_CORPORATE")}
-            className={`w-full py-5 border ${selectedService === "DHA_ELITE_CORPORATE" ? "bg-white text-black" : "border-white/10 text-white"} text-[10px] font-black uppercase tracking-widest transition-all mb-8`}
+            onClick={() => setSelectedService("DHA_ELITE")}
+            className={`w-full py-5 border ${selectedService === "DHA_ELITE" ? "bg-white text-black" : "border-white/10 text-white"} text-[10px] font-black uppercase tracking-widest transition-all`}
           >
-            {selectedService === "DHA_ELITE_CORPORATE" ? "PROTOCOL_SELECTED" : "INITIALIZE_SERVICE"}
+            {selectedService === "DHA_ELITE" ? "PROTOCOL_LOCKED" : "INITIALIZE_PLAN"}
           </button>
-          <span className="text-2xl font-black text-white">PKR 15,000+</span>
         </div>
       </div>
 
-      {/* INQUIRY PORTAL: HOVER-UP */}
+      {/* INQUIRY HUB: HOVER-UP */}
       <section className="max-w-4xl mx-auto hover-up transition-all duration-1000">
-        <div className="text-center mb-12">
-          <h2 className="text-6xl font-black mb-4 italic tracking-tighter text-white uppercase">Initialize</h2>
-          {selectedService && <p className="text-accent text-xs font-mono uppercase tracking-[0.4em] animate-pulse">Requesting: {selectedService}</p>}
+        <div className="text-center mb-16">
+          <h2 className="text-7xl font-black mb-6 italic tracking-tighter text-white uppercase">Initialize</h2>
+          {selectedService && <p className="text-cyan-400 text-xs font-mono uppercase tracking-[0.5em] animate-pulse">Ready to deploy: {selectedService}</p>}
         </div>
         
-        <form onSubmit={handleDispatch} className={`glass-panel p-12 md:p-20 text-left transition-all ${isSuccess ? 'scale-95 opacity-50' : ''}`}>
+        <form onSubmit={handleDispatch} className={`glass-card p-14 md:p-24 text-left transition-all ${isSending ? 'opacity-50 scale-95' : ''}`}>
           <div className="grid grid-cols-1 gap-16">
-            <input required name="business" placeholder="BUSINESS_NAME" className="bg-transparent border-b-2 border-white/5 py-4 text-white outline-none focus:border-accent transition-all uppercase text-sm font-bold placeholder:text-slate-800" />
+            <input required name="business" placeholder="ORGANIZATION_NAME" className="bg-transparent border-b-2 border-white/5 py-6 text-white outline-none focus:border-cyan-400 transition-all uppercase text-sm font-bold placeholder:text-slate-800" />
             <textarea 
               required 
               name="vision" 
               placeholder="PROJECT_SCOPE" 
-              className="bg-transparent border-b-2 border-white/5 py-4 text-white outline-none focus:border-accent transition-all uppercase text-sm font-bold placeholder:text-slate-800" 
+              className="bg-transparent border-b-2 border-white/5 py-6 text-white outline-none focus:border-cyan-400 transition-all uppercase text-sm font-bold placeholder:text-slate-800" 
               rows={1} 
-              defaultValue={selectedService ? `Inquiry for ${selectedService}. Vision: ` : ""}
+              defaultValue={selectedService ? `Requesting ${selectedService} protocol. Vision: ` : ""}
             />
-            <button type="submit" className="btn-pulse w-full py-10 bg-accent text-slate-950 font-black uppercase tracking-[0.8em] text-xs hover:tracking-[1em] transition-all active:scale-95">
-              {isSuccess ? "DISPATCHING..." : "DISPATCH_INQUIRY"}
+            <button type="submit" className="glow-breathe w-full py-12 bg-cyan-400 text-slate-950 font-black uppercase tracking-[0.8em] text-xs hover:tracking-[1em] transition-all">
+              {isSending ? "TRANSMITTING..." : "DISPATCH_INQUIRY"}
             </button>
           </div>
         </form>
       </section>
 
-      <footer className="mt-40 text-center pb-20 opacity-20">
-        <p className="text-[9px] font-mono uppercase tracking-[1.5em]">YOUTUN_DEVELOPMENT // KARACHI // 2026</p>
+      <footer className="mt-48 text-center pb-24 opacity-20">
+        <p className="text-[10px] font-mono uppercase tracking-[1.5em]">YOUTUN_PROTOCOLS // KARACHI_PK // MARCH_2026</p>
       </footer>
     </main>
   );
