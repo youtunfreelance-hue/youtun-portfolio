@@ -3,28 +3,95 @@
 @theme {
   --color-slate-950: #020617;
   --color-blue-600: #2563eb;
+  --color-blue-400: #60a5fa;
 }
 
-/* This FORCES the luxury look onto your site */
+:root {
+  background-color: #020617;
+  color: #f1f5f9;
+}
+
+/* 1. Smooth Page Transitions */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* 2. Ultra-Professional Body */
 body {
-  background-color: #020617 !important;
-  color: white !important;
+  background: radial-gradient(circle at top center, #0f172a 0%, #020617 100%) !important;
+  color: #f1f5f9 !important;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
 }
 
+/* 3. Animated Luxury Cards */
+section, .card {
+  background: rgba(15, 23, 42, 0.6) !important;
+  border: 1px solid rgba(51, 65, 85, 0.5) !important;
+  border-radius: 20px !important;
+  padding: 2rem !important;
+  margin-bottom: 1.5rem !important;
+  backdrop-filter: blur(10px);
+}
+
+section:hover {
+  border-color: #2563eb !important;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.3);
+}
+
+/* 4. The "Magic" Animated Button */
 button, .send-inquiry-btn {
-  background-color: #2563eb !important;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
   color: white !important;
-  padding: 10px 20px !important;
-  border-radius: 8px !important;
-  font-weight: bold !important;
+  padding: 14px 28px !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
   border: none !important;
   cursor: pointer !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
 }
 
-section, .card {
-  border: 1px solid #1e293b !important;
-  border-radius: 12px !important;
-  padding: 1.5rem !important;
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+  filter: brightness(1.1);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* 5. Sharp Typography */
+h1 {
+  font-size: 3rem !important;
+  font-weight: 900 !important;
+  background: linear-gradient(to right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1rem !important;
-  background-color: #0f172a !important;
+}
+
+h2, h3 {
+  color: #60a5fa !important;
+  font-weight: 700 !important;
+}
+
+/* 6. Clean Forms */
+input, textarea {
+  background: #020617 !important;
+  border: 1px solid #334155 !important;
+  border-radius: 10px !important;
+  padding: 12px !important;
+  color: white !important;
+  width: 100%;
+}
+
+input:focus {
+  border-color: #2563eb !important;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
