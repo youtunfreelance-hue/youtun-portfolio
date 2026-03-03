@@ -5,11 +5,26 @@
   --color-blue-600: #2563eb;
 }
 
-:root {
-  background-color: #020617;
-  color: white;
+/* This FORCES the luxury look onto your site */
+body {
+  background-color: #020617 !important;
+  color: white !important;
 }
 
-body {
-  background-color: #020617;
+button, .send-inquiry-btn {
+  background-color: #2563eb !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  border-radius: 8px !important;
+  font-weight: bold !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+section, .card {
+  border: 1px solid #1e293b !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  background-color: #0f172a !important;
 }
