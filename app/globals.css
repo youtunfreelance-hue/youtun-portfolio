@@ -3,95 +3,72 @@
 @theme {
   --color-slate-950: #020617;
   --color-blue-600: #2563eb;
-  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
 }
 
+/* 1. Reset & High-End Base */
 :root {
   background-color: #020617;
-  color: #f1f5f9;
+  color: #f8fafc;
 }
 
-/* 1. Smooth Page Transitions */
-* {
-  transition: all 0.3s ease-in-out;
-}
-
-/* 2. Ultra-Professional Body */
 body {
-  background: radial-gradient(circle at top center, #0f172a 0%, #020617 100%) !important;
-  color: #f1f5f9 !important;
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  background: radial-gradient(circle at 50% 0%, #1e293b 0%, #020617 100%) !important;
+  min-height: 100vh;
+  font-family: 'Geist', sans-serif; /* Uses your high-end font */
 }
 
-/* 3. Animated Luxury Cards */
+/* 2. Glassmorphism Cards (Makes it look deep, not flat) */
 section, .card {
-  background: rgba(15, 23, 42, 0.6) !important;
-  border: 1px solid rgba(51, 65, 85, 0.5) !important;
-  border-radius: 20px !important;
-  padding: 2rem !important;
-  margin-bottom: 1.5rem !important;
-  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.3) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
+  border-radius: 24px !important;
+  padding: 2.5rem !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
 section:hover {
-  border-color: #2563eb !important;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.3);
+  transform: translateY(-8px) scale(1.01) !important;
+  border-color: rgba(59, 130, 246, 0.5) !important;
+  background: rgba(15, 23, 42, 0.5) !important;
 }
 
-/* 4. The "Magic" Animated Button */
+/* 3. Gradient Typography */
+h1, .hero-title {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.05em !important;
+  background: linear-gradient(to bottom right, #ffffff 30%, #94a3b8) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* 4. The "Localhost" Luxury Button */
 button, .send-inquiry-btn {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
-  color: white !important;
-  padding: 14px 28px !important;
-  border-radius: 12px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.5px;
-  border: none !important;
-  cursor: pointer !important;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+  padding: 14px 32px !important;
+  border-radius: 14px !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.2) !important;
+  transition: all 0.3s ease !important;
 }
 
 button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
-  filter: brightness(1.1);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.5) !important;
+  filter: brightness(1.1) !important;
+  letter-spacing: 1px !important;
 }
 
-button:active {
-  transform: scale(0.98);
-}
-
-/* 5. Sharp Typography */
-h1 {
-  font-size: 3rem !important;
-  font-weight: 900 !important;
-  background: linear-gradient(to right, #ffffff, #94a3b8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem !important;
-}
-
-h2, h3 {
-  color: #60a5fa !important;
-  font-weight: 700 !important;
-}
-
-/* 6. Clean Forms */
-input, textarea {
-  background: #020617 !important;
-  border: 1px solid #334155 !important;
-  border-radius: 10px !important;
-  padding: 12px !important;
-  color: white !important;
-  width: 100%;
-}
-
-input:focus {
-  border-color: #2563eb !important;
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+/* 5. Animated Background Elements */
+.glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(37, 99, 235, 0.15);
+  filter: blur(100px);
+  border-radius: 50%;
+  z-index: -1;
 }
