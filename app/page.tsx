@@ -2,98 +2,79 @@ import React from 'react';
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-[#050505] text-white selection:bg-[#D4AF37]/30 selection:text-[#D4AF37] font-sans p-6 md:p-12 lg:p-24">
+    <main className="min-h-screen p-6 md:p-24 selection:bg-gold/30 selection:text-gold">
       
-      {/* --- HERO SECTION --- */}
-      <header className="max-w-5xl mx-auto mb-20 animate-in fade-in slide-in-from-top-4 duration-1000">
-        <div className="flex items-center gap-2 mb-4">
-          <span className="h-px w-8 bg-[#D4AF37]"></span>
-          <span className="text-[#D4AF37] text-xs font-bold tracking-[0.3em] uppercase">Verified Developer • Karachi</span>
+      {/* --- HERO SECTION: CENTERED --- */}
+      <header className="max-w-4xl mx-auto text-center mb-32">
+        <div className="flex justify-center items-center gap-4 mb-8">
+          <span className="h-[1px] w-12 bg-gold/50"></span>
+          <span className="text-gold text-[10px] font-black uppercase tracking-[0.4em]">Karachi • Verified Developer</span>
+          <span className="h-[1px] w-12 bg-gold/50"></span>
         </div>
-        <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 bg-gradient-to-b from-white to-[#444] bg-clip-text text-transparent">
+        <h1 className="text-7xl md:text-9xl font-black tracking-tighter mb-8 gold-text-gradient">
           YOUTUN.DEV
         </h1>
-        <p className="max-w-2xl text-gray-400 text-lg md:text-xl leading-relaxed">
-          16-year-old Full Stack Developer crafting high-performance, 
-          <span className="text-white font-medium"> luxury digital solutions </span> 
-          for the elite local market.
+        <p className="max-w-2xl mx-auto text-gray-500 text-lg md:text-xl font-medium leading-relaxed">
+          16-year-old Full Stack Architect. Turning basic ideas into 
+          <span className="text-white"> elite-tier digital real estate</span>.
         </p>
       </header>
 
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* --- THE 3-COLUMN GRID --- */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
         
-        {/* --- IPHONE 13 FUND (LUXURY CARD) --- */}
-        <section className="group p-8 rounded-[32px] bg-white/[0.03] border border-white/10 backdrop-blur-xl hover:border-[#D4AF37]/50 transition-all duration-500">
-          <div className="flex justify-between items-start mb-8">
-            <h2 className="text-2xl font-bold tracking-tight">📱 iPhone 13 Fund</h2>
-            <span className="px-3 py-1 rounded-full bg-[#D4AF37]/10 text-[#D4AF37] text-[10px] font-black uppercase tracking-widest">Active Goal</span>
-          </div>
+        {/* LEFT: IPHONE FUND */}
+        <section className="glass-card p-10">
+          <h2 className="text-xl font-bold mb-6">📱 Tech Goal</h2>
           <div className="space-y-4">
-            <div className="flex justify-between text-sm font-medium">
-              <span className="text-gray-500 uppercase tracking-widest text-[10px]">Target</span>
-              <span>Rs. 75,000</span>
+            <div className="flex justify-between text-[10px] font-black uppercase tracking-widest text-gray-500">
+              <span>iPhone 13 Fund</span>
+              <span className="text-gold">6.7%</span>
             </div>
-            <div className="h-3 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
-              <div className="h-full w-[6.7%] bg-gradient-to-r from-[#996515] to-[#D4AF37] rounded-full"></div>
+            <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+              <div className="h-full w-[6.7%] bg-gold shadow-[0_0_20px_rgba(212,175,55,0.4)]"></div>
             </div>
-            <p className="text-[#D4AF37] font-black text-xs uppercase tracking-widest">6.7% Completed</p>
+            <p className="text-[10px] text-gray-600 font-bold leading-tight">Every project fuels the research lab.</p>
           </div>
         </section>
 
-        {/* --- EXPERT SERVICES --- */}
-        <section className="p-8 rounded-[32px] bg-white/[0.03] border border-white/10 backdrop-blur-xl hover:border-[#D4AF37]/50 transition-all duration-500">
-          <h2 className="text-2xl font-bold tracking-tight mb-8">Expert Services</h2>
-          <div className="space-y-6">
-            <div className="flex justify-between items-center border-b border-white/5 pb-4">
-              <div>
-                <h3 className="font-bold text-white">Saddar Special</h3>
-                <p className="text-xs text-gray-500 uppercase tracking-widest mt-1">Live Price Lists & Catalogs</p>
-              </div>
-              <span className="font-mono text-[#D4AF37]">Rs. 8,000+</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <div>
-                <h3 className="font-bold text-white">DHA Business Pack</h3>
-                <p className="text-xs text-gray-500 uppercase tracking-widest mt-1">Premium Landing Pages</p>
-              </div>
-              <span className="font-mono text-[#D4AF37]">Rs. 15,000+</span>
-            </div>
-          </div>
+        {/* MIDDLE: SADDAR SPECIAL */}
+        <section className="glass-card p-10">
+          <div className="mb-6 px-3 py-1 rounded-full bg-gold/10 text-gold text-[9px] font-black uppercase tracking-widest w-fit">Fastest Delivery</div>
+          <h2 className="text-xl font-bold mb-3">Saddar Special</h2>
+          <p className="text-sm text-gray-500 mb-8">Live price catalogs for local retailers. Instant updates.</p>
+          <div className="text-2xl font-black text-white">Rs. 8,000<span className="text-gold">+</span></div>
         </section>
 
-        {/* --- GOATED CONTACT SECTION (REPLACING THE TRASH ONE) --- */}
-        <section className="md:col-span-2 p-10 rounded-[40px] bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 backdrop-blur-3xl">
-          <h2 className="text-3xl font-black mb-10 tracking-tight">Initialize Inquiry</h2>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-2">
-              <label className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 ml-1">Business Name</label>
-              <input 
-                type="text" 
-                placeholder="e.g. Prestige Apparel Karachi"
-                className="w-full bg-white/[0.05] border border-white/10 p-5 rounded-2xl focus:outline-none focus:border-[#D4AF37] focus:bg-white/[0.08] transition-all placeholder:text-gray-700"
-              />
-            </div>
-            <div className="space-y-2">
-              <label className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 ml-1">Project Vision</label>
-              <textarea 
-                placeholder="What high-end solution can I build for you?"
-                rows={1}
-                className="w-full bg-white/[0.05] border border-white/10 p-5 rounded-2xl focus:outline-none focus:border-[#D4AF37] focus:bg-white/[0.08] transition-all placeholder:text-gray-700"
-              />
-            </div>
-            <button className="md:col-span-2 w-full py-6 rounded-2xl bg-[#D4AF37] text-black font-black uppercase tracking-[0.2em] text-sm hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(212,175,55,0.2)] active:scale-95 transition-all duration-300">
-              Send Proposal Inquiry
-            </button>
-          </form>
+        {/* RIGHT: DHA ELITE */}
+        <section className="glass-card p-10">
+          <div className="mb-6 px-3 py-1 rounded-full bg-white/5 text-gray-400 text-[9px] font-black uppercase tracking-widest w-fit">Premium Only</div>
+          <h2 className="text-xl font-bold mb-3">DHA Elite Pack</h2>
+          <p className="text-sm text-gray-500 mb-8">Full SEO-optimized corporate landings with high-end motion.</p>
+          <div className="text-2xl font-black text-white">Rs. 15,000<span className="text-gold">+</span></div>
         </section>
-
       </div>
 
-      <footer className="max-w-5xl mx-auto mt-20 text-center">
-        <p className="text-[10px] uppercase tracking-[0.5em] text-gray-600 font-bold">
-          © 2026 Youtun.Dev Portfolio • Karachi, Pakistan
-        </p>
-      </footer>
+      {/* --- INQUIRY PORTAL: CENTERED --- */}
+      <section className="max-w-4xl mx-auto glass-card p-12 md:p-16 border-white/10 relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 blur-[100px]"></div>
+        <h2 className="text-4xl font-black mb-12 text-center tracking-tight">Initialize Project</h2>
+        
+        <form className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="flex flex-col gap-3">
+            <label className="text-[10px] font-black uppercase tracking-[0.3em] text-gold/60 ml-1">Entity Name</label>
+            <input type="text" placeholder="e.g. Prestige Wear Karachi" className="p-6 rounded-2xl text-white w-full" />
+          </div>
+          <div className="flex flex-col gap-3">
+            <label className="text-[10px] font-black uppercase tracking-[0.3em] text-gold/60 ml-1">The Vision</label>
+            <textarea placeholder="Describe your digital goals..." className="p-6 rounded-2xl text-white w-full" rows={1} />
+          </div>
+          <button className="md:col-span-2 py-8 rounded-3xl bg-gradient-to-r from-gold-muted via-gold to-gold-muted text-black font-black uppercase tracking-[0.5em] text-xs hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(212,175,55,0.3)] active:scale-95">
+            Submit Proposal Inquiry
+          </button>
+        </form>
+      </section>
+
     </main>
   );
 }
