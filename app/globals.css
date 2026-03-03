@@ -2,7 +2,7 @@
 
 @theme {
   --color-gold: #D4AF37;
-  --color-gold-muted: #996515;
+  --color-gold-deep: #996515;
 }
 
 :root {
@@ -10,47 +10,49 @@
   color: #ffffff;
 }
 
-/* 1. Ultra-Smooth Reset */
-* {
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
+/* 1. High-End Typography & Background */
 body {
-  background: radial-gradient(circle at top center, #111 0%, #050505 100%) !important;
-  min-height: 100vh;
+  background: radial-gradient(circle at 20% 0%, #111 0%, #050505 100%) !important;
+  font-family: 'Geist', 'Inter', sans-serif !important;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* 2. Glassmorphism & Animations */
-.glass-card {
-  background: rgba(255, 255, 255, 0.02) !important;
-  backdrop-filter: blur(20px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
-  border-radius: 40px !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
-}
-
-.glass-card:hover {
-  background: rgba(255, 255, 255, 0.04) !important;
-  border-color: #D4AF37 !important;
-  transform: translateY(-10px);
-}
-
-/* 3. Luxury Typography Gradient */
-.gold-text-gradient {
-  background: linear-gradient(to bottom, #ffffff 20%, #D4AF37 100%);
+/* 2. Professional Text Gradient */
+.text-luxury {
+  background: linear-gradient(180deg, #FFFFFF 30%, #94A3B8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* 4. Professional Form Handling */
-input, textarea {
-  background: rgba(255, 255, 255, 0.03) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  outline: none !important;
+/* 3. Glassmorphism Card System */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 32px !important;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-input:focus, textarea:focus {
+.glass-panel:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
   border-color: #D4AF37 !important;
-  background: rgba(255, 255, 255, 0.07) !important;
+  transform: translateY(-8px);
+}
+
+/* 4. Underline Input Style (Luxury) */
+.luxury-input {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0 !important;
+  padding: 1.5rem 0.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+}
+
+.luxury-input:focus {
+  border-bottom-color: #D4AF37 !important;
+  outline: none !important;
 }
