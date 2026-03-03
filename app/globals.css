@@ -2,6 +2,7 @@
 
 @theme {
   --color-accent: #00f2ff;
+  --color-obsidian: #020617;
 }
 
 :root {
@@ -11,47 +12,63 @@
 
 body {
   background: #020617 !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Geist', 'Inter', sans-serif !important;
   overflow-x: hidden;
-  cursor: crosshair;
 }
 
-/* 1. Oscillating Title Animation */
+/* 1. Partner Addition: The "Scanning HUD" Line */
+@keyframes scanLine {
+  0% { top: -10%; opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { top: 110%; opacity: 0; }
+}
+.scan-line {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f2ff, transparent);
+  animation: scanLine 8s linear infinite;
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* 2. Side-to-Side YOUTUN Aura */
 @keyframes sideToSide {
   0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(20px); }
-  75% { transform: translateX(-20px); }
+  25% { transform: translateX(15px); }
+  75% { transform: translateX(-15px); }
 }
 .animate-youtun {
   display: inline-block;
-  animation: sideToSide 6s ease-in-out infinite;
+  animation: sideToSide 5s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
 }
 
-/* 2. Directional Movement for Interest */
-.hover-up:hover { transform: translateY(-20px); }
-.hover-down:hover { transform: translateY(20px); }
-.hover-right:hover { transform: translateX(20px); }
-.hover-left:hover { transform: translateX(-20px); }
+/* 3. Directional Hover Interest */
+.hover-up:hover { transform: translateY(-15px) scale(1.02); }
+.hover-down:hover { transform: translateY(15px); }
+.hover-left:hover { transform: translateX(-15px); }
+.hover-right:hover { transform: translateX(15px); }
 
-/* 3. Breathing Neon Pulse */
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 5px rgba(0, 242, 255, 0.4); border-color: rgba(0, 242, 255, 0.2); }
-  50% { box-shadow: 0 0 25px rgba(0, 242, 255, 0.7); border-color: #00f2ff; }
+/* 4. Partner Addition: Breathing Glow for Buttons */
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 242, 255, 0.3); border-color: rgba(0, 242, 255, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(0, 242, 255, 0.6); border-color: #00f2ff; }
 }
-.btn-pulse {
-  animation: pulseGlow 2s infinite;
+.glow-breathe {
+  animation: breathe 3s infinite;
 }
 
-.glass-panel {
-  background: rgba(15, 23, 42, 0.6) !important;
-  backdrop-filter: blur(15px) !important;
+.glass-card {
+  background: rgba(15, 23, 42, 0.7) !important;
+  backdrop-filter: blur(20px) !important;
   border: 1px solid rgba(255, 255, 255, 0.05) !important;
-  border-radius: 32px !important;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 40px !important;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.text-luxury {
-  background: linear-gradient(180deg, #FFFFFF 30%, #475569 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.glass-card:hover {
+  border-color: #00f2ff;
+  background: rgba(15, 23, 42, 0.9) !important;
 }
