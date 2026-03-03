@@ -9,52 +9,58 @@
   color: #f8fafc;
 }
 
-/* 1. Global Reset & Animation Base */
-* {
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
 body {
   background: radial-gradient(circle at 20% 0%, #0f172a 0%, #020617 100%) !important;
-  font-family: 'Geist', 'Inter', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-/* 2. Glassmorphism Card System */
+/* 1. Side-to-Side Animation for YOUTUN */
+@keyframes sideToSide {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(25px); }
+  75% { transform: translateX(-25px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-youtun {
+  display: inline-block;
+  animation: sideToSide 5s ease-in-out infinite;
+}
+
+/* 2. Cyber-Panels */
 .glass-panel {
   background: rgba(30, 41, 59, 0.4) !important;
   backdrop-filter: blur(20px) !important;
   border: 1px solid rgba(255, 255, 255, 0.05) !important;
   border-radius: 32px !important;
+  transition: all 0.4s ease;
 }
 
 .glass-panel:hover {
-  background: rgba(30, 41, 59, 0.6) !important;
   border-color: rgba(0, 242, 255, 0.3) !important;
-  transform: translateY(-8px);
+  background: rgba(30, 41, 59, 0.6) !important;
 }
 
-/* 3. Luxury Headings (Metallic Gradient) */
-h1, h2, h3 {
+/* 3. Luxury Typography */
+.text-luxury {
   background: linear-gradient(180deg, #FFFFFF 20%, #94a3b8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: -0.05em !important;
 }
 
-/* 4. The "Contract" Underline Input */
+/* 4. Minimalist Contract Input */
 .luxury-input {
   background: transparent !important;
   border: none !important;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 0 !important;
   padding: 1.5rem 0.5rem !important;
-  font-weight: 700 !important;
   color: white !important;
+  outline: none !important;
+  transition: border-color 0.3s ease;
 }
 
 .luxury-input:focus {
   border-bottom-color: #00f2ff !important;
-  outline: none !important;
 }
