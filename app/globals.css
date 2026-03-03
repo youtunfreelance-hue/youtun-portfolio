@@ -9,19 +9,24 @@
   color: #f8fafc;
 }
 
+/* 1. Global Reset & Animation Base */
+* {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 body {
   background: radial-gradient(circle at 20% 0%, #0f172a 0%, #020617 100%) !important;
   font-family: 'Geist', 'Inter', sans-serif !important;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* Luxury Panels */
+/* 2. Glassmorphism Card System */
 .glass-panel {
   background: rgba(30, 41, 59, 0.4) !important;
   backdrop-filter: blur(20px) !important;
   border: 1px solid rgba(255, 255, 255, 0.05) !important;
   border-radius: 32px !important;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel:hover {
@@ -30,7 +35,7 @@ body {
   transform: translateY(-8px);
 }
 
-/* High-End Typography */
+/* 3. Luxury Headings (Metallic Gradient) */
 h1, h2, h3 {
   background: linear-gradient(180deg, #FFFFFF 20%, #94a3b8 100%);
   -webkit-background-clip: text;
@@ -38,16 +43,15 @@ h1, h2, h3 {
   letter-spacing: -0.05em !important;
 }
 
-/* Minimalist Underline Input */
+/* 4. The "Contract" Underline Input */
 .luxury-input {
   background: transparent !important;
   border: none !important;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 0 !important;
   padding: 1.5rem 0.5rem !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   color: white !important;
-  transition: all 0.3s ease;
 }
 
 .luxury-input:focus {
