@@ -1,8 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-slate-950: #020617;
+  --color-blue-600: #2563eb;
+}
 
 :root {
   background-color: #020617;
   color: white;
+}
+
+body {
+  background-color: #020617;
 }
