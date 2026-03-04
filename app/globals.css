@@ -12,9 +12,10 @@ body {
   color: white;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  margin: 0;
 }
 
-/* Scanning HUD Animation */
+/* Scanning HUD */
 .scanline {
   width: 100%;
   height: 2px;
@@ -23,8 +24,8 @@ body {
   top: 0;
   z-index: 100;
   pointer-events: none;
-  animation: scan 6s linear infinite;
-  box-shadow: 0 0 15px var(--electric-cyan);
+  animation: scan 8s linear infinite;
+  box-shadow: 0 0 20px var(--electric-cyan);
 }
 
 @keyframes scan {
@@ -32,40 +33,31 @@ body {
   100% { transform: translateY(100vh); }
 }
 
-/* YOUTUN Name Oscillation */
-.oscillate {
-  animation: move-x 10s ease-in-out infinite;
-}
-
-@keyframes move-x {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(20px); }
-}
-
-/* Round Box & Hover Effects */
-.round-box {
+/* Directional Hover Animations */
+.service-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(0, 243, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border-radius: 40px;
-  transition: all 0.4s ease;
+  border-radius: 32px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.round-box:hover {
+.service-card:hover {
   border-color: var(--electric-cyan);
-  box-shadow: 0 0 40px rgba(0, 243, 255, 0.15);
-  transform: translateY(-5px);
-}
-
-.youtun-btn {
   background: rgba(0, 243, 255, 0.05);
-  border: 1px solid rgba(0, 243, 255, 0.3);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 12px;
+  box-shadow: 0 0 50px rgba(0, 243, 255, 0.1);
 }
 
-.youtun-btn:hover {
-  background: var(--electric-cyan);
-  color: black;
-  box-shadow: 0 0 25px var(--electric-cyan);
+/* Oscillation & Pulse */
+.oscillate { animation: move-x 12s ease-in-out infinite; }
+@keyframes move-x {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(25px); }
+}
+
+.pulse-cyan {
+  animation: pulse-glow 3s infinite;
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(0, 243, 255, 0.6); }
 }
