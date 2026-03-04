@@ -2,24 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --obsidian: #050505;
+  --electric-cyan: #00f3ff;
+}
+
 body {
-  background: radial-gradient(circle at top left, #0a1120 0%, #050505 100%);
+  background-color: var(--obsidian);
   color: white;
   font-family: 'Inter', sans-serif;
-  margin: 0;
   overflow-x: hidden;
 }
 
-/* The HUD Scanning Line */
+/* Scanning HUD Animation */
 .scanline {
   width: 100%;
   height: 2px;
-  background: rgba(0, 243, 255, 0.2);
+  background: rgba(0, 243, 255, 0.3);
   position: fixed;
   top: 0;
-  animation: scan 8s linear infinite;
-  z-index: 50;
-  box-shadow: 0 0 15px #00f3ff;
+  z-index: 100;
+  pointer-events: none;
+  animation: scan 6s linear infinite;
+  box-shadow: 0 0 15px var(--electric-cyan);
 }
 
 @keyframes scan {
@@ -27,26 +32,40 @@ body {
   100% { transform: translateY(100vh); }
 }
 
-/* Round Boxes (Status Cards) */
+/* YOUTUN Name Oscillation */
+.oscillate {
+  animation: move-x 10s ease-in-out infinite;
+}
+
+@keyframes move-x {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+
+/* Round Box & Hover Effects */
 .round-box {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  border-radius: 40px; /* Max roundness */
-  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 243, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 40px;
+  transition: all 0.4s ease;
+}
+
+.round-box:hover {
+  border-color: var(--electric-cyan);
+  box-shadow: 0 0 40px rgba(0, 243, 255, 0.15);
+  transform: translateY(-5px);
 }
 
 .youtun-btn {
-  border: 1px solid rgba(0, 243, 255, 0.4);
   background: rgba(0, 243, 255, 0.05);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 12px;
 }
 
 .youtun-btn:hover {
-  background: #00f3ff;
+  background: var(--electric-cyan);
   color: black;
-  box-shadow: 0 0 30px #00f3ff;
+  box-shadow: 0 0 25px var(--electric-cyan);
 }
