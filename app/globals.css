@@ -32,30 +32,21 @@ body {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(16px);
-  border-radius: 32px; /* Extra rounded as requested */
+  border-radius: 40px; /* Max roundness */
   padding: 40px;
 }
 
-/* YOUTUN Button Hover Effects */
 .youtun-btn {
   border: 1px solid rgba(0, 243, 255, 0.4);
   background: rgba(0, 243, 255, 0.05);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .youtun-btn:hover {
   background: #00f3ff;
   color: black;
   box-shadow: 0 0 30px #00f3ff;
-  transform: translateY(-2px);
-}
-
-.input-field {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  color: white;
 }
