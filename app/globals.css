@@ -15,7 +15,7 @@ body {
   margin: 0;
 }
 
-/* Scanning HUD */
+/* Scanning HUD Animation */
 .scanline {
   width: 100%;
   height: 2px;
@@ -33,31 +33,45 @@ body {
   100% { transform: translateY(100vh); }
 }
 
-/* Directional Hover Animations */
-.service-card {
+/* Perfect Centering & Glass Effects */
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.glass-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(0, 243, 255, 0.1);
-  border-radius: 32px;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  backdrop-filter: blur(20px);
+  border-radius: 40px;
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
 }
 
-.service-card:hover {
-  border-color: var(--electric-cyan);
-  background: rgba(0, 243, 255, 0.05);
-  box-shadow: 0 0 50px rgba(0, 243, 255, 0.1);
+/* YOUTUN Name Animation */
+.oscillate {
+  animation: move-x 12s ease-in-out infinite;
 }
 
-/* Oscillation & Pulse */
-.oscillate { animation: move-x 12s ease-in-out infinite; }
 @keyframes move-x {
   0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(25px); }
+  50% { transform: translateX(30px); }
 }
 
-.pulse-cyan {
-  animation: pulse-glow 3s infinite;
+.youtun-btn {
+  background: rgba(0, 243, 255, 0.05);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); }
-  50% { box-shadow: 0 0 30px rgba(0, 243, 255, 0.6); }
+
+.youtun-btn:hover {
+  background: var(--electric-cyan);
+  color: black;
+  box-shadow: 0 0 30px var(--electric-cyan);
 }
