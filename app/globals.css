@@ -15,8 +15,8 @@ body {
   margin: 0;
 }
 
-/* Luxury Centering Logic */
-.vibe-container {
+/* Luxury Centered Layout */
+.master-vibe-center {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,28 +26,30 @@ body {
   padding: 2rem;
 }
 
-/* Smooth "Breathe" Animation for YOUTUN */
-@keyframes breathe {
-  0%, 100% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.05); opacity: 1; }
-}
-
-.animate-vibe {
-  animation: breathe 8s ease-in-out infinite;
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.03);
+/* High-End Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(0, 243, 255, 0.1);
   backdrop-filter: blur(20px);
   border-radius: 40px;
   width: 100%;
-  max-width: 800px;
-  padding: 3rem;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 850px;
+  padding: 3.5rem;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glass-card:hover {
+.glass-panel:hover {
   border-color: var(--cyan-glow);
-  box-shadow: 0 0 50px rgba(0, 243, 255, 0.15);
+  box-shadow: 0 0 60px rgba(0, 243, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Breathing Logo Animation */
+@keyframes logo-breathe {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+.animate-brand {
+  animation: logo-breathe 6s ease-in-out infinite;
 }
